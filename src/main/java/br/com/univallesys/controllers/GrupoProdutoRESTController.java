@@ -25,7 +25,7 @@ public class GrupoProdutoRESTController {
 	private GrupoProdutosDAO grupoDao;
 
 	@RequestMapping(method = RequestMethod.GET, value = "/gruposproduto")
-	public List<GrupoDeProdutos> getCustomers() {
+	public List<GrupoDeProdutos> getGrupos() {
 		return grupoDao.all();
 	}
 
@@ -54,7 +54,7 @@ public class GrupoProdutoRESTController {
 
 		GrupoDeProdutos grupo = grupoDao.findById(id);
 		if (null == grupo) {
-			return new ResponseEntity("No Customer found for ID " + id, HttpStatus.NOT_FOUND);
+			return new ResponseEntity("Não há grupo com o id:" + id, HttpStatus.NOT_FOUND);
 		} else
 			grupoDao.remove(grupo);
 
