@@ -1,9 +1,13 @@
 package br.com.univallesys.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class GrupoDeProdutos {
@@ -13,6 +17,8 @@ public class GrupoDeProdutos {
 	   private Integer id;
 	   private String company_id;
 	   private String product_group_id;
+	   @OneToMany(mappedBy = "produto")
+	   private List<Produto> produtos;
 	   
 	public Integer getId() {
 		return id;
