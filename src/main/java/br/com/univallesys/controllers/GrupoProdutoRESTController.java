@@ -74,6 +74,4 @@ public class GrupoProdutoRESTController {
 
 		return new ResponseEntity(grupo, HttpStatus.OK);
 	}
-
-
 }
